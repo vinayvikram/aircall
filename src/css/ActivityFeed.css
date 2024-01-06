@@ -17,9 +17,10 @@
     margin-bottom: 10px;
     display: flex;
     gap: 5px;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: bold;
     letter-spacing: 0.1em;
+    color: #727272;
     
 }
 
@@ -48,8 +49,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 12px;
+    padding: 10px 0 10px 12px;
     cursor: pointer;
+}
+
+.activity > div {
+    display: flex;
+}
+
+.activity img {
+    height: 20px;
+    margin-right: 10px;
 }
 
 .activity .via-and-duration {
@@ -60,4 +70,22 @@
 
 .activity i {
     font-size: 10px;
+}
+
+.activity-time {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border-left: 1px dashed black;
+    padding-left: 10px;
+    color: #727272;
+}
+
+.activity-time > b {
+    border: 1px solid black;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-right: 0;
+    font-size: 10px;
+    padding: 2px;
 }

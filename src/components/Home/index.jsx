@@ -3,6 +3,8 @@ import { sortAndGroupFeed } from "../../lib/sort-and-group-feed";
 import ActivityFeed from "./ActivityFeed";
 import Header from "../Header";
 import { BASE_URL } from "../../lib";
+import ArchiveIcon from "../../icons/archive.svg";
+import UnarchiveIcon from "../../icons/unarchive.svg";
 
 const Home = () => {
     const [feedByDate, setFeedByDate] = useState([]);
@@ -97,6 +99,7 @@ const Home = () => {
             archiveButtonLabel={selectedTab === "INBOX" ? "Archive all calls" : "Unarchive all calls"}
             archiveButtonAction={selectedTab === "INBOX" ? archiveAll : resetAll}
             archiveLoading={archiveLoading}
+            archiveIcon={selectedTab === "INBOX" ? ArchiveIcon : UnarchiveIcon}
         />
         <ActivityFeed 
             selectedTab={selectedTab} 

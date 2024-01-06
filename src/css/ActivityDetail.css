@@ -1,14 +1,31 @@
-.activity-detail {
+.activity-detail-container {
     flex: 1;
-    margin:  20px 0;
-    padding: 20px 10px;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    margin:  20px 0;
     border: 1px solid black;
     border-radius: 4px;
 }
 
+.activity-detail {
+    flex: 1;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+}
+
 .activity-detail i {
     text-transform: capitalize;
+}
+
+.call-type-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.call-type-icon > img {
+    width: 50px;
+    margin: 20px;
 }

@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from "react-router-dom";
-import "../../css/ActivityDetail.css"
 import ActivityDetail from './ActivityDetail';
 import Header from '../Header';
 import { BASE_URL } from '../../lib';
+import ArchiveIcon from "../../icons/archive.svg";
+import UnarchiveIcon from "../../icons/unarchive.svg";
 
 const Detail = () => {
 
@@ -66,6 +67,7 @@ const Detail = () => {
             archiveButtonLabel={activity.is_archived ? "Unarchive" : "Archive"}
             archiveButtonAction={toggleArchive}
             archiveLoading={archiveLoading}
+            archiveIcon={activity.is_archived ? UnarchiveIcon : ArchiveIcon}
         />
         <ActivityDetail activity={activity} activityLoading={activityLoading} />
     </React.Fragment>

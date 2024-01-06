@@ -1,6 +1,7 @@
 import {DateTime, Duration} from 'luxon';
 import "../../css/ActivityFeed.css"
 import { useNavigate } from 'react-router-dom';
+import { getCallTypeIcon } from '../../lib/get-correct-icon';
 
 
 const ActivityFeed = ({ selectedTab, feedByDate, feedLoading }) => {
@@ -24,12 +25,19 @@ const ActivityFeed = ({ selectedTab, feedByDate, feedLoading }) => {
                 <div className="activity-feed">
                 {item.feed.filter(f => selectedTab === "ARCHIVED" ? f.is_archived : !f.is_archived).map((f) => (
                     <div className="activity" onClick={() => navigate(`/detail/${f.id}`)} key={f.id}>
-                        <div className="via-and-duration">
-                            <b>{f.via ? f.via : "Unknown"}</b>
-                            <i>{Duration.fromMillis(f.duration).toFormat("hh:mm:ss")}</i>
+                        <div >
+                            <img src={getCallTypeIcon(f.call_type ? f.call_type : '')} alt="call-type-icon" />
+                            <div className="via-and-duration">
+                                <b>{f.via ? f.via : "Unknown"}</b>
+                                <i>{Duration.fromMillis(f.duration).toFormat("hh:mm:ss")}</i>
+                            </div>
                         </div>
-                        <div>
-                            {DateTime.fromISO(f.created_at).toFormat("hh:mm a")}
+                        <div className='activity-time'>
+                            {DateTime.fromISO(f.created_at).toFormat("hh:mm")}
+                            <b>
+                                {DateTime.fromISO(f.created_at).toFormat("a")}
+                            </b>
+                            
                         </div>
                     </div>
                 ))}

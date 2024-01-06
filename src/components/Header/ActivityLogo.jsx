@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import CallLogo from "../../call-icon.svg";
+import CallLogo from "../../icons/call-icon.svg";
 
 const ActivityLogo = () => {
 
