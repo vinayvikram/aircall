@@ -25,7 +25,7 @@ const Header = ({ type = "HOME", selectedTab = "INBOX", setSelectedTab = () => {
                                 Archived
                             </button>
                         </div>
-                        <img src={SettingsIcon} />
+                        <img src={SettingsIcon} alt='' />
                     </div>
                     <ArchiveButton icon={archiveIcon} label={archiveButtonLabel} onClick={archiveButtonAction} loading={archiveLoading} />
                 </header>
@@ -41,7 +41,7 @@ const Header = ({ type = "HOME", selectedTab = "INBOX", setSelectedTab = () => {
                                 Go Back
                             </button>
                         </div>
-                        <img src={SettingsIcon} />
+                        <img src={SettingsIcon} alt='' />
                     </div>
                     <ArchiveButton icon={archiveIcon} label={archiveButtonLabel} onClick={archiveButtonAction} loading={archiveLoading} />
                 </header>

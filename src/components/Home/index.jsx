@@ -5,6 +5,7 @@ import Header from "../Header";
 import { BASE_URL } from "../../lib";
 import ArchiveIcon from "../../icons/archive.svg";
 import UnarchiveIcon from "../../icons/unarchive.svg";
+import { toast } from 'react-toastify';
 
 const Home = () => {
     const [feedByDate, setFeedByDate] = useState([]);
@@ -12,7 +13,6 @@ const Home = () => {
 
     const [feedLoading, setFeedLoading] = useState(false);
     const [archiveLoading, setArchiveLoading] = useState(false);
-
 
     const fetchFeedData = useCallback(async (selectedTab) => {
 
@@ -43,7 +43,8 @@ const Home = () => {
 
             setArchiveLoading(true);
 
-            await Promise.all(unarchivedActivities.map(activity => {
+            await toast.promise( 
+                Promise.all(unarchivedActivities.map(activity => {
                 return fetch(`${BASE_URL}/activities/${activity.id}`, {
                     mode: "cors",
                     cache: "no-cache",
@@ -56,8 +57,16 @@ const Home = () => {
                     })
                 })
             })).then(() => {
-                fetchFeedData(selectedTab)
+                fetchFeedData(selectedTab);
+            }), {
+                pending: "Archiving",
+                success: "Archived successfully.",
+                error: "Something went wrong."
+            }, {
+                position: "bottom-center",
+                autoClose: 2000
             })
+           
 
         } catch (err) {
             console.log(err)
@@ -70,12 +79,19 @@ const Home = () => {
     const resetAll = useCallback(async () => {
         try {
             setArchiveLoading(true);
-            await fetch(`${BASE_URL}/reset`,{
+            await toast.promise(fetch(`${BASE_URL}/reset`,{
                 cache: "no-cache",
                 method: 'PATCH'
             }).then(() => {
                 fetchFeedData(selectedTab)
-            })
+            }), {
+                pending: "Unarchiving",
+                success: "Unarchived successfully.",
+                error: "Something went wrong."
+            }, {
+                position: "bottom-center",
+                autoClose: 2000
+            }) 
 
         } catch (err) {
             console.log(err)

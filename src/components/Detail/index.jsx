@@ -5,6 +5,7 @@ import Header from '../Header';
 import { BASE_URL } from '../../lib';
 import ArchiveIcon from "../../icons/archive.svg";
 import UnarchiveIcon from "../../icons/unarchive.svg";
+import { toast } from 'react-toastify';
 
 const Detail = () => {
 
@@ -39,7 +40,7 @@ const Detail = () => {
         try {
             setArchiveLoading(true);
 
-            await fetch(`${BASE_URL}/activities/${activity.id}`, {
+            await toast.promise(fetch(`${BASE_URL}/activities/${activity.id}`, {
                 mode: "cors",
                 cache: "no-cache",
                 headers: {
@@ -49,6 +50,13 @@ const Detail = () => {
                 body: JSON.stringify({
                     is_archived: !activity.is_archived
                 })
+            }), {
+                pending: activity.is_archived ? "Unarchiving" : "Archiving",
+                success: activity.is_archived ? "Unarchived successfully." : "Archived successfully.",
+                error: "Something went wrong."
+            }, {
+                position: 'bottom-center',
+                autoClose: 2000
             })
 
             await fetchActivityDetail(activity.id);

@@ -14,6 +14,10 @@ const ActivityDetail = ({ activity, activityLoading }) => {
         )
     }
 
+    if(!activity){
+        return <></>;
+    }
+
     return (
         <div className='activity-detail-container'>
         <div className="activity-detail">
@@ -40,7 +44,7 @@ const ActivityDetail = ({ activity, activityLoading }) => {
             </div>
         </div>
         <div className="call-type-icon">
-            <img src={getCallTypeIcon(activity.call_type ? activity.call_type : '')} />
+            <img src={getCallTypeIcon(activity.call_type ? activity.call_type : '')}  alt="call-type-icon"/>
         </div>
     </div>
     )

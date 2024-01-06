@@ -1,11 +1,10 @@
-import { Loading } from "../Loading";
 
 const ArchiveButton = ({ label, onClick, loading, icon }) => {
     return (
         <div className='archive-button'>
-            <img src={icon} />
+            <img src={icon} alt="archive-icon" />
             <button onClick={onClick} disabled={loading}>
-            {loading ? <Loading /> : label}
+            {label}
             </button>
         </div>
     )
