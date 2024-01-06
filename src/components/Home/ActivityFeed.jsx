@@ -2,6 +2,7 @@ import {DateTime, Duration} from 'luxon';
 import "../../css/ActivityFeed.css"
 import { useNavigate } from 'react-router-dom';
 import { getCallTypeIcon } from '../../lib/get-correct-icon';
+import { Loading } from '../Loading';
 
 
 const ActivityFeed = ({ selectedTab, feedByDate, feedLoading }) => {
@@ -12,7 +13,7 @@ const ActivityFeed = ({ selectedTab, feedByDate, feedLoading }) => {
     if (feedLoading) {
         return (
         <div className='activity-feed-container'>
-            Loading...
+            <Loading />
         </div>
         )
     }

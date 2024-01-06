@@ -1,6 +1,7 @@
 import { Duration } from "luxon";
 import "../../css/ActivityDetail.css";
 import { getCallTypeIcon } from "../../lib/get-correct-icon";
+import { Loading } from "../Loading";
 
 
 const ActivityDetail = ({ activity, activityLoading }) => {
@@ -8,7 +9,7 @@ const ActivityDetail = ({ activity, activityLoading }) => {
     if(activityLoading) {
         return (
             <div className='activity-detail'>
-                Loading...
+                <Loading />
             </div>
         )
     }
