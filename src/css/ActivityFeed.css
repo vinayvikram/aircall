@@ -1,17 +1,33 @@
 
 .activity-feed-container {
-    height: 100%;
+    height: calc(100% - 120px);
     display: flex;
     flex-direction: column;
     gap: 10px;
     overflow-x: hidden;
     overflow-y: auto;
+    background-color: #FDFDFC;
+    padding: 10px 0;
 }
+
 
 .activity-date {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+    display: flex;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    
+}
+
+.activity-date::after, .activity-date::before {
+    content: "";
+    flex: 1;
+    border-bottom: 1px dashed black;
+    margin-bottom: 5px;
 }
 
 .activity-feed {
@@ -20,11 +36,28 @@
     gap: 10px;
 }
 
+.activity-feed a {
+    all: unset;
+}
+
 .activity {
     border: 1px solid black;
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 4px 8px;
-
+    background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.activity .via-and-duration {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.activity i {
+    font-size: 10px;
 }
