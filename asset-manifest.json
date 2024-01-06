@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/aircall/static/css/main.3b5afb39.css",
-    "main.js": "/aircall/static/js/main.9f230209.js",
+    "main.js": "/aircall/static/js/main.0a1cc66a.js",
     "static/js/787.182b40e4.chunk.js": "/aircall/static/js/787.182b40e4.chunk.js",
     "static/media/call-icon.svg": "/aircall/static/media/call-icon.0eb4544a99a9f0f0f3e1079801c43113.svg",
     "static/media/settings.svg": "/aircall/static/media/settings.57741382e89ee9939f14058c24daee71.svg",
@@ -15,11 +15,11 @@
     "static/media/back.svg": "/aircall/static/media/back.d174d3122c56cee5847dc6df6dd5daf5.svg",
     "static/media/voicemail.svg": "/aircall/static/media/voicemail.e56d97396672f9d89cdc2b04af37f2b6.svg",
     "main.3b5afb39.css.map": "/aircall/static/css/main.3b5afb39.css.map",
-    "main.9f230209.js.map": "/aircall/static/js/main.9f230209.js.map",
+    "main.0a1cc66a.js.map": "/aircall/static/js/main.0a1cc66a.js.map",
     "787.182b40e4.chunk.js.map": "/aircall/static/js/787.182b40e4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3b5afb39.css",
-    "static/js/main.9f230209.js"
+    "static/js/main.0a1cc66a.js"
   ]
 }
