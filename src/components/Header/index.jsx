@@ -3,7 +3,7 @@ import ActivityLogo from "./ActivityLogo";
 import ArchiveButton from "./ArchiveButton";
 import "../../css/Header.css";
 
-const Header = ({ type = "HOME", selectedTab = "INBOX", setSelectedTab = () => {}, archiveButtonLabel = '', archiveButtonAction = () => {} }) => {
+const Header = ({ type = "HOME", selectedTab = "INBOX", setSelectedTab = () => {}, archiveButtonLabel = '', archiveButtonAction = () => {}, archiveLoading = false }) => {
 
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const Header = ({ type = "HOME", selectedTab = "INBOX", setSelectedTab = () => {
                             </button>
                         </div>
                     </div>
-                    <ArchiveButton label={archiveButtonLabel} onClick={archiveButtonAction} />
+                    <ArchiveButton label={archiveButtonLabel} onClick={archiveButtonAction} loading={archiveLoading} />
                 </header>
             );
         case "DETAIL":
@@ -37,7 +37,7 @@ const Header = ({ type = "HOME", selectedTab = "INBOX", setSelectedTab = () => {
                             </button>
                         </div>
                     </div>
-                    <ArchiveButton label={archiveButtonLabel} onClick={archiveButtonAction} />
+                    <ArchiveButton label={archiveButtonLabel} onClick={archiveButtonAction} loading={archiveLoading} />
                 </header>
             );
         default:

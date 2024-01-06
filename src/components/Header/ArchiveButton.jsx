@@ -1,8 +1,8 @@
-const ArchiveButton = ({ label, onClick}) => {
+const ArchiveButton = ({ label, onClick, loading}) => {
     return (
         <div className='archive-button'>
-            <button onClick={onClick}>
-            {label}
+            <button onClick={onClick} disabled={loading}>
+            {loading ? "Loading..." : label}
             </button>
         </div>
     )

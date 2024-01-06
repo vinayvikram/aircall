@@ -8,3 +8,7 @@
     border: 1px solid black;
     border-radius: 4px;
 }
+
+.activity-detail i {
+    text-transform: capitalize;
+}

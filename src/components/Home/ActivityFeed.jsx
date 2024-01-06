@@ -25,7 +25,7 @@ const ActivityFeed = ({ selectedTab, feedByDate, feedLoading }) => {
                 {item.feed.filter(f => selectedTab === "ARCHIVED" ? f.is_archived : !f.is_archived).map((f) => (
                     <div className="activity" onClick={() => navigate(`/detail/${f.id}`)} key={f.id}>
                         <div className="via-and-duration">
-                            <b>{f.via}</b>
+                            <b>{f.via ? f.via : "Unknown"}</b>
                             <i>{Duration.fromMillis(f.duration).toFormat("hh:mm:ss")}</i>
                         </div>
                         <div>

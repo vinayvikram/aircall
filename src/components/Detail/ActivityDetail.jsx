@@ -1,3 +1,7 @@
+import { Duration } from "luxon";
+import "../../css/ActivityDetail.css"
+
+
 const ActivityDetail = ({ activity, activityLoading }) => {
 
     if(activityLoading) {
@@ -11,25 +15,25 @@ const ActivityDetail = ({ activity, activityLoading }) => {
     return (
         <div className='activity-detail'>
         <div>
-            Direction : {activity.direction}   
+            <b>Direction : </b> <i>{activity.direction ? activity.direction : "Unknown"} </i>  
         </div>
         <div>
-            From : {activity.from}
+            <b>From :</b> <i>{activity.from ? activity.from : "Unknown"}</i>
         </div>
         <div>
-            To : {activity.to}
+            <b>To : </b> <i>{activity.to ? activity.to : "Unknown"}</i>
         </div>
         <div>
-            Via : {activity.via}
+            <b>Via : </b> <i>{activity.via ? activity.via : "Unknown"}</i>
         </div>
         <div>
-            Duration: {activity.duration}
+            <b>Duration: </b> <i>{Duration.fromMillis(activity.duration).toFormat("hh:mm:ss.SSS")}</i>
         </div>
         <div>
-            Is Archived : {activity.is_archived}
+            <b>Is Archived : </b> <i>{activity.is_archived ? "Yes" : "No"}</i>
         </div>
         <div>
-            Call Type : {activity.call_type}
+            <b>Call Type : </b> <i>{activity.call_type}</i>
         </div>
     </div>
     )

@@ -25,11 +25,10 @@ header {
     justify-content: flex-start;
     align-items: center;
     font-size: 18px;
-    /* border-bottom: 1px solid black; */
-    border-right: 1px solid black;
     background-color: #FFFFFF;
     font-weight: bold;
     color: #484848;
+    cursor: pointer;
   }
   
   .activity-logo img {
@@ -37,12 +36,14 @@ header {
     height: 75%;
   }
 
-  .tabs-container {
+  .tabs-container, .back-button {
     flex: 1;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-left: 1px solid black;
     border-top: 1px solid black;
+    border-top-left-radius: 4px;
   }
 
   .tabs-container .tab {
@@ -50,7 +51,14 @@ header {
     color: #A8A8A8;
     height: 100%;
     cursor: pointer;
-    
+  }
+
+  .back-button > button {
+    all: unset;
+    height: 100%;
+    cursor: pointer;
+    color: #666666;
+    font-weight: bold;
   }
 
   .dashed-line {
@@ -83,4 +91,6 @@ header {
     width: 100%;
     height: 100%;
   }
+  
+  
   
