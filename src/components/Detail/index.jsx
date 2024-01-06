@@ -26,6 +26,10 @@ const Detail = () => {
             setActivity(data)
         } catch(e) {
             console.log(e);
+            toast(e.message ? e.message : 'Failed to fetch data.', {
+                position: "bottom-center",
+                autoClose: 2000
+            })
         } finally {
             setActivityLoading(false)
         }
@@ -61,7 +65,11 @@ const Detail = () => {
 
             await fetchActivityDetail(activity.id);
         } catch(err) {
-            console.log(err)
+            console.log(err);
+            toast(err.message ? err.message : 'Something went worng', {
+                position: "bottom-center",
+                autoClose: 2000
+            })
         } finally {
             setArchiveLoading(false)
         }

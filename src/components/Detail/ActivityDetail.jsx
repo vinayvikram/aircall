@@ -1,7 +1,7 @@
 import { Duration } from "luxon";
 import "../../css/ActivityDetail.css";
 import { getCallTypeIcon } from "../../lib/get-correct-icon";
-import { Loading } from "../Loading";
+import { Loading } from 'react-loading-dot';
 
 
 const ActivityDetail = ({ activity, activityLoading }) => {
@@ -9,7 +9,7 @@ const ActivityDetail = ({ activity, activityLoading }) => {
     if(activityLoading) {
         return (
             <div className='activity-detail'>
-                <Loading />
+                <Loading  size="12px" background="black" duration="0.3s"/>
             </div>
         )
     }

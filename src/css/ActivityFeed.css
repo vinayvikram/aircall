@@ -10,6 +10,17 @@
     padding: 10px 0;
 }
 
+.activity-feed-container.empty {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+}
+
+.activity-feed-container.empty > img {
+    width: 50%;
+}
+
 
 .activity-date {
     display: flex;

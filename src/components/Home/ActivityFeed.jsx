@@ -2,7 +2,8 @@ import {DateTime, Duration} from 'luxon';
 import "../../css/ActivityFeed.css"
 import { useNavigate } from 'react-router-dom';
 import { getCallTypeIcon } from '../../lib/get-correct-icon';
-import { Loading } from '../Loading';
+import { Loading } from 'react-loading-dot';
+import EmptyIcon from "../../icons/empty.svg";
 
 
 const ActivityFeed = ({ selectedTab, feedByDate, feedLoading }) => {
@@ -13,8 +14,16 @@ const ActivityFeed = ({ selectedTab, feedByDate, feedLoading }) => {
     if (feedLoading) {
         return (
         <div className='activity-feed-container'>
-            <Loading />
+            <Loading  size="12px" background="black" duration='0.3s'/>
         </div>
+        )
+    }
+
+    if (feedByDate.length === 0){
+        return (
+            <div className='activity-feed-container empty'>
+                <img src={EmptyIcon} alt="empty" />
+            </div>
         )
     }
 

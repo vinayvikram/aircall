@@ -30,6 +30,10 @@ const Home = () => {
 
         } catch(e) {
             console.log(e);
+            toast(e.message ? e.message : 'Failed to fetch data.', {
+                position: "bottom-center",
+                autoClose: 2000
+            });
         } finally {
             setFeedLoading(false)
         }
@@ -69,7 +73,11 @@ const Home = () => {
            
 
         } catch (err) {
-            console.log(err)
+            console.log(err);
+            toast(err.message ? err.message : 'Something went worng', {
+                position: "bottom-center",
+                autoClose: 2000
+            })
         } finally {
             setArchiveLoading(false)
         }
@@ -94,7 +102,11 @@ const Home = () => {
             }) 
 
         } catch (err) {
-            console.log(err)
+            console.log(err);
+            toast(err.message ? err.message : 'Something went worng', {
+                position: "bottom-center",
+                autoClose: 2000
+            })
         } finally {
             setArchiveLoading(false);
         }
